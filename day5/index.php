@@ -47,34 +47,16 @@
 
     $grid = drawLinesOnGrid($allLines, $grid);
 
-//    echo "Grid<br>";
-//    for ($i = 0; $i < count($grid); $i++)
-//    {
-//        for ($j = 0; $j < count($grid[$i]); $j++)
-//        {
-//            echo $grid[$i][$j] . " ";
-//        }
-//        echo "<br>";
-//    }
-
     echo countValuesHigherThanGivenInGrid($grid, 2);
 
     echo "<br>";
     echo "<br>";
+
+
     //PART TWO
     $grid = generateGrid($maxX, $maxY);
 
     $grid = drawLinesOnGridIncDiag($allLines, $grid);
-//
-//    echo "Grid<br>";
-//    for ($i = 0; $i < count($grid); $i++)
-//    {
-//        for ($j = 0; $j < count($grid[$i]); $j++)
-//        {
-//            echo $grid[$i][$j] . " ";
-//        }
-//        echo "<br>";
-//    }
 
     echo countValuesHigherThanGivenInGrid($grid, 2);
 
@@ -175,11 +157,8 @@
 
     function drawDiaganolLineOnGrid($line, $grid)
     {
-//        1,1 -> 3,3 ---- 1,1  2,2  3,3
-//        9,7 -> 7,9 ----- 9,7 8,8 7,9
-
-//        if x1 smaller
         $xIncrementer = 0;
+        // if x1 smaller
         if ($line[0][0] < $line[1][0])
         {
             $xIncrementer = 1;
@@ -188,8 +167,9 @@
         {
             $xIncrementer = -1;
         }
-        //        if y1 smaller
+
         $yIncrementer = 0;
+        //if y1 smaller
         if ($line[0][1] < $line[1][1])
         {
             $yIncrementer = 1;
@@ -199,11 +179,9 @@
             $yIncrementer = -1;
         }
 
-//        echo $line[0][0] . "," . $line[0][1] . "->" . $line[1][0] . "," . $line[1][1] . "<br>";
-//        echo "X Incrementer:".$xIncrementer.", Y Incrementer: ".$yIncrementer."<br>";
         for ($j = 0; $j < (abs($line[1][1] - $line[0][1]) + 1); $j++)
         {
-            $grid[$line[0][1] + $j*$yIncrementer][$line[0][0] + $j*$xIncrementer]++;
+            $grid[$line[0][1] + $j * $yIncrementer][$line[0][0] + $j * $xIncrementer]++;
         }
 
         return $grid;

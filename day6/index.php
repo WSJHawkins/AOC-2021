@@ -41,8 +41,6 @@
     {
         $bucketsOfAges[$fish[$j]]++;
     }
-//    var_dump($bucketsOfAges);
-//    echo "<br>";
 
     $numberOfDays = 256;
     for ($i = 0; $i < $numberOfDays; $i++)
@@ -60,8 +58,6 @@
                 $bucketsOfAges[$j] = $bucketsOfAges[$j + 1];
             }
         }
-//        var_dump($bucketsOfAges);
-//        echo "<br>";
     }
 
     $sum = 0;

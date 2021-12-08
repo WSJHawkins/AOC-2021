@@ -1,14 +1,13 @@
 <?php
 
     $file = file_get_contents("sampleInput.txt", true);
-//    $file = file_get_contents("input.txt", true);
+    $file = file_get_contents("input.txt", true);
     $allInputs = explode("\n", $file);
     $bingoCalls = explode(",", $allInputs[0]);
 
 
     //PART ONE
     $boards = parseBoards(array_slice($allInputs, 2));
-
 
     echo "<br>start";
     echo "<br>";
